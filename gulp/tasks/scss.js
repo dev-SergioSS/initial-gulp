@@ -12,7 +12,7 @@ const sass = gulpSass(dartSass);
 export const scss = () => {
   return (
     app.gulp
-      .src(app.path.src.scss, { sourcemaps: true })
+      .src(app.path.src.scss, { sourcemaps: app.isCommon })
       .pipe(
         app.plugins.plumber(
           app.plugins.notify.onError({
@@ -27,24 +27,30 @@ export const scss = () => {
           outputStyle: 'expanded',
         })
       )
+      //  add class .webp --fast
       .pipe(
-        webpcss({
-          webpClass: '.webp',
-          noWebpClass: '.no-webp',
-        })
+        app.plugins.if(
+          app.isFast,
+          webpcss({
+            webpClass: '.webp',
+            noWebpClass: '.no-webp',
+          })
+        )
       )
-
       .pipe(groupCssMediaQueires())
       .pipe(autoPrefixer())
       .pipe(app.gulp.dest(app.path.build.scss))
-      // minifications
-      .pipe(cleanCss())
+      //  зжимання і перейменування --fast
+      .pipe(app.plugins.if(app.isFast, cleanCss())) //   підключити min.css!!!
       .pipe(
-        rename({
-          extname: '.min.css',
-        })
+        app.plugins.if(
+          app.isFast,
+          rename({
+            extname: '.min.css',
+          })
+        )
       )
-      .pipe(app.gulp.dest(app.path.build.scss))
+      .pipe(app.plugins.if(app.isFast, app.gulp.dest(app.path.build.scss)))
       .pipe(app.plugins.browsersync.stream())
   );
 };

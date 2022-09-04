@@ -12,12 +12,15 @@ import {
   ttfToWoff,
   fontsStyle,
   server,
+  zip,
 } from './gulp/tasks/index.js';
 
 global.app = {
   path,
   gulp,
   plugins,
+  isCommon: !process.argv.includes('--fast'),
+  isFast: process.argv.includes('--fast'),
 };
 
 const watcher = () => {
@@ -32,6 +35,20 @@ const fonts = gulp.series(ttfToWoff, fontsStyle);
 
 const mainTasks = gulp.parallel(copy, fonts, html, scss, js, images);
 
-const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
+const common = gulp.series(mainTasks, gulp.parallel(watcher, server));
+const resetCommon = gulp.series(
+  reset,
+  mainTasks,
+  gulp.parallel(watcher, server)
+);
+const fastBuild = gulp.series(reset, mainTasks);
+const deployZip = gulp.series(reset, mainTasks, zip);
 
-gulp.task('default', dev);
+export { common };
+export { resetCommon };
+export { fastBuild };
+export { deployZip };
+
+// const dev2 = gulp.parallel(mainTasks, watcher, server);
+
+gulp.task('default', common);

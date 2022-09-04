@@ -1,0 +1,35 @@
+//^ variables 
+
+$maxContainer: 1200px;
+$md1: $maxContainer + 30px;
+$md2: 992px;
+$md3: 768px;
+$md4: 480px;
+
+//^ html
+
+body {
+	color: #222;
+	font-size: 18px;
+	font-family: serif;
+
+	&.lock {
+		overflow: hidden;
+	}
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+main {
+	flex: 1 1 auto;
+}
+
+.container {
+	max-width: $maxContainer;
+	margin: 0 auto;
+	padding: 0 15px;
+}

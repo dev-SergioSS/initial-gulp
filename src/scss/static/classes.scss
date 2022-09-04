@@ -1,0 +1,31 @@
+.visually-hidden {
+	position: absolute;
+	clip: rect(0 0 0 0);
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+}
+
+.image-contain {
+	position: relative;
+	& img {
+		object-fit: contain;
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: auto;
+		width: 100%;
+	}
+}
+
+.image-cover {
+	position: relative;
+	& img {
+		object-fit: cover;
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+	}
+}

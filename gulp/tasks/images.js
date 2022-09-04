@@ -10,13 +10,16 @@ export const images = () => {
           app.plugins.notify.onError({
             title: 'IMAGES',
             message: 'Error: <%= error.message %>',
-          }),
-        ),
+          })
+        )
       )
-      // 	webp
-      .pipe(app.plugins.newer(app.path.build.images))
-      .pipe(webp())
-      .pipe(app.gulp.dest(app.path.build.images))
+      // 	webp --fast
+      .pipe(
+        app.plugins.if(app.isFast, app.plugins.newer(app.path.build.images))
+      )
+      .pipe(app.plugins.if(app.isFast, webp()))
+      .pipe(app.plugins.if(app.isFast, app.gulp.dest(app.path.build.images)))
+
       //   зжимання
       .pipe(app.gulp.src(app.path.src.images))
       .pipe(app.plugins.newer(app.path.build.images))
@@ -24,11 +27,11 @@ export const images = () => {
         imagemin([
           gifsicle({ interlaced: true }),
           mozjpeg({ quality: 75, progressive: true }),
-          optipng({ optimizationLevel: 5 }),
+          optipng({ optimizationLevel: 3 }),
           svgo({
             plugins: [{ removeViewBox: true }, { cleanupIDs: false }],
           }),
-        ]),
+        ])
       )
       .pipe(app.gulp.dest(app.path.build.images))
       //	svg
