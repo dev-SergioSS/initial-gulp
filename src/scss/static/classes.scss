@@ -8,6 +8,7 @@
 
 .image-contain {
 	position: relative;
+
 	& img {
 		object-fit: contain;
 		position: absolute;
@@ -20,6 +21,7 @@
 
 .image-cover {
 	position: relative;
+
 	& img {
 		object-fit: cover;
 		position: absolute;
@@ -27,5 +29,23 @@
 		left: 0;
 		height: 100%;
 		width: 100%;
+	}
+}
+
+.scrolbar {
+	&::-webkit-scrollbar {
+		width: 8px;
+		//горизонтальна прокрутка
+		height: 8px;
+	}
+
+	&::-webkit-scrollbar-track {
+		background: #A3CCEE;
+		border-radius: 5px;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-color: #2699D6;
+		border-radius: 5px;
 	}
 }

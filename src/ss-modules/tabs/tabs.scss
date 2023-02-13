@@ -1,0 +1,28 @@
+.tabs {
+
+	&__nav {
+		display: flex;
+	}
+
+	&__nav-item {
+		// flex: 1;
+		white-space: nowrap;
+		transition: all 0.3s ease 0s;
+
+		&:hover {}
+
+		&.active {}
+	}
+
+	&__nav-link {}
+
+	&__body {}
+
+	&__block {
+		display: none;
+
+		&.open {
+			display: block;
+		}
+	}
+}
