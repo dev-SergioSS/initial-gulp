@@ -1,0 +1,32 @@
+.visually-hidden {
+	position: absolute;
+	clip: rect(0 0 0 0);
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+}
+
+.scrolbar {
+	&::-webkit-scrollbar {
+		width: 8px;
+		//горизонтальна прокрутка
+		height: 8px;
+	}
+
+	&::-webkit-scrollbar-track {
+		background: #A3CCEE;
+		border-radius: 5px;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-color: #2699D6;
+		border-radius: 5px;
+	}
+}
+
+.svg-img {
+	background-image: url("data:image/svg+xml,%3Csvg .....   /%3E%3C/svg%3E");
+
+
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' d='M19 6.872L17.128 5 12 10.128 6.872 5 5 6.872 10.128 12 5 17.128 6.872 19 12 13.872 17.128 19 19 17.128 13.872 12 19 6.872Z'/%3E%3C/svg%3E");
+}

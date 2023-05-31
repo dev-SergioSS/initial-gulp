@@ -5,10 +5,10 @@
   "main": "gulpfile.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "reset": "gulp resetCommon",
-    "fast-build": "gulp fastBuild --fast",
-	"zip": "gulp deployZip"
+    "dev": "gulp",
+		"zip": "gulp deployZip",
+    "reset": "gulp resetDev",
+    "build": "gulp deployZip --optimize"
   },
   "keywords": [],
   "author": "dev-SergioSS",

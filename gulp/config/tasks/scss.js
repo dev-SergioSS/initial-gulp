@@ -27,10 +27,10 @@ export const scss = () => {
 					outputStyle: 'expanded',
 				})
 			)
-			//  add class .webp --fast
+			//  add class .webp --optimize
 			.pipe(
 				app.plugins.if(
-					app.isFast,
+					app.isOptimize,
 					webpcss({
 						webpClass: '.webp',
 						noWebpClass: '.no-webp',
@@ -44,17 +44,17 @@ export const scss = () => {
 			.pipe(app.plugins.replace(/@icons\//g, '../img/icons/'))
 			// 
 			.pipe(app.gulp.dest(app.path.build.scss))
-			//  зжимання і перейменування --fast
-			.pipe(app.plugins.if(app.isFast, cleanCss())) //   підключити min.css!!!
+			//  зжимання і перейменування --optimize
+			.pipe(app.plugins.if(app.isOptimize, cleanCss())) //   підключити min.css!!!
 			.pipe(
 				app.plugins.if(
-					app.isFast,
+					app.isOptimize,
 					rename({
 						extname: '.min.css',
 					})
 				)
 			)
-			.pipe(app.plugins.if(app.isFast, app.gulp.dest(app.path.build.scss)))
+			.pipe(app.plugins.if(app.isOptimize, app.gulp.dest(app.path.build.scss)))
 			.pipe(app.plugins.browsersync.stream())
 	);
 };

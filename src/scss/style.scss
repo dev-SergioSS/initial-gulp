@@ -1,9 +1,38 @@
-@import './static/fonts';
-@import './static/null';
+// @import './default/fonts';
+@import './default/null';
+@import './default/mixins';
 
-@import './modules/default';
+
+body {
+	color: #222;
+	font-size: 18px;
+	font-family: serif;
+
+	&.lock {
+		overflow: hidden;
+	}
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+main {
+	flex: 1 1 auto;
+}
+
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+
 @import './modules/header';
 @import './modules/footer';
-// @import './modules/popup';
+// @import '../ss-plugins/popup/popup';
 
-//^  sections
+
+
+// **  sections

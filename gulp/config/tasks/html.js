@@ -17,8 +17,8 @@ export const html = () => {
 			.pipe(app.plugins.replace(/@img\//g, 'img/'))
 			.pipe(app.plugins.replace(/@icons\//g, 'img/icons/'))
 
-			//   add webp in <picture> --fast
-			.pipe(app.plugins.if(app.isFast, webpHtmlNoSvg()))
+			//   add webp in <picture> --optimize
+			.pipe(app.plugins.if(app.isOptimize, webpHtmlNoSvg()))
 			.pipe(app.gulp.dest(app.path.build.html))
 			.pipe(app.plugins.browsersync.stream())
 	);
