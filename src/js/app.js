@@ -1,32 +1,34 @@
-//^ mobileMenu
+// -- mobileMenu
 
-const btnMenu = document.querySelector('.header__btn-menu');
-const menuContent = document.querySelector('.header__content');
-const menuLink = document.querySelectorAll('.menu__link');
+const body = document.querySelector('body')
+const header = document.querySelector('.header')
+const btnMenu = document.querySelector('.header__btn-menu')
+const menu = document.querySelector('.menu')
+const menuLink = document.querySelectorAll('.menu__link')
+
+// клік поза хедером закриває меню
+window.addEventListener('click', (e) => {
+  if (!e.target.closest('.header') && menu.classList.contains('open')) {
+    btnMenu.classList.remove('open')
+    menu.classList.remove('open')
+  }
+})
 
 if (btnMenu != null) {
   btnMenu.addEventListener('click', function () {
-    btnMenu.classList.toggle('open');
-    menuContent.classList.toggle('open');
-    lockBody('lock');
-  });
+    btnMenu.classList.toggle('open')
+    menu.classList.toggle('open')
+  })
 }
 
 for (link of menuLink) {
   link.addEventListener('click', () => {
-    btnMenu.classList.remove('open');
-    menuContent.classList.remove('open');
-    lockBody('unlock');
-  });
+    btnMenu.classList.remove('open')
+    menu.classList.remove('open')
+  })
 }
 
-// function need for 1)mobile menu 2) popup
-function lockBody(action) {
-  const body = document.querySelector('body');
-
-  if (action == 'lock') {
-    body.classList.toggle('lock');
-  } else if (action == 'unlock') {
-    body.classList.remove('lock');
-  }
+function lockBodyScroll(action) {
+  if (action == 'lock') body.classList.toggle('lock')
+  else if (action == 'unlock') body.classList.remove('lock')
 }

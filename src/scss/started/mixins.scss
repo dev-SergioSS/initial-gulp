@@ -1,4 +1,6 @@
-.visually-hidden {
+// @include mixin-name;
+
+@mixin visually-hidden {
 	position: absolute;
 	clip: rect(0 0 0 0);
 	width: 1px;
@@ -6,11 +8,26 @@
 	margin: -1px;
 }
 
-.scrolbar {
+@mixin header-absolute {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 100;
+}
+
+@mixin header-fixed {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 100;
+}
+
+@mixin scrolbar {
 	&::-webkit-scrollbar {
 		width: 8px;
-		//горизонтальна прокрутка
-		height: 8px;
+		height: 8px; // horizontal
 	}
 
 	&::-webkit-scrollbar-track {
@@ -24,9 +41,28 @@
 	}
 }
 
-.svg-img {
+@mixin svg-img {
 	background-image: url("data:image/svg+xml,%3Csvg .....   /%3E%3C/svg%3E");
 
-
 	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' d='M19 6.872L17.128 5 12 10.128 6.872 5 5 6.872 10.128 12 5 17.128 6.872 19 12 13.872 17.128 19 19 17.128 13.872 12 19 6.872Z'/%3E%3C/svg%3E");
+}
+
+@mixin input-number-null {
+
+	input[type="number"]::-webkit-outer-spin-button,
+	input[type="number"]::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+		appearance: none;
+		margin: 0;
+	}
+
+	// Firefox:
+	input[type="number"] {
+		-moz-appearance: textfield;
+	}
+
+	input[type="number"]:hover,
+	input[type="number"]:focus {
+		-moz-appearance: number-input;
+	}
 }

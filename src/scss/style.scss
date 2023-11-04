@@ -1,12 +1,16 @@
-// @import './default/fonts';
-@import './default/null';
-@import './default/mixins';
+// @import './started/fonts';
+
+
+@import './started/null';
+@import './started/mixins';
 
 
 body {
 	color: #222;
 	font-size: 18px;
 	font-family: serif;
+	background-color: pink;
+	color: #fff;
 
 	&.lock {
 		overflow: hidden;
@@ -29,10 +33,9 @@ main {
 	padding: 0 15px;
 }
 
-@import './modules/header';
-@import './modules/footer';
-// @import '../ss-plugins/popup/popup';
-
+@import '../components/header/header';
+@import '../components/footer/footer';
+@import '../components/popup/popup';
 
 
 // **  sections
