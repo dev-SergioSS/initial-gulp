@@ -26,18 +26,18 @@
 
 @mixin scrolbar {
 	&::-webkit-scrollbar {
-		width: 8px;
-		height: 8px; // horizontal
+		width: 15px;
+		height: 15px; // horizontal
 	}
 
 	&::-webkit-scrollbar-track {
-		background: #A3CCEE;
-		border-radius: 5px;
+		background: #f1f1f1;
+		// border-radius: 5px;
 	}
 
 	&::-webkit-scrollbar-thumb {
-		background-color: #2699D6;
-		border-radius: 5px;
+		background-color: #c1c1c1;
+		// border-radius: 5px;
 	}
 }
 

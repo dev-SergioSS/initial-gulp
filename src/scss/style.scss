@@ -9,11 +9,17 @@ body {
 	color: #222;
 	font-size: 18px;
 	font-family: serif;
-	background-color: pink;
+	background-color: gray;
 	color: #fff;
+	@include scrolbar;
 
 	&.lock {
 		overflow: hidden;
+		padding-right: 15px;
+
+		@media (max-width: 768px) {
+			padding-right: 0;
+		}
 	}
 }
 

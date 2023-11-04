@@ -1,62 +1,30 @@
-//^ popups
+// -- popups
 
-const popupLinks = document.querySelectorAll('.popup-link');
-const popupCloseIcon = document.querySelectorAll('.popup__btn-close');
+const popups = document.querySelectorAll('.popup')
+const openPopups = document.querySelectorAll('.button-popup')
+const closePopups = document.querySelectorAll(
+  '.popup__btn-close, .popup__overlay'
+)
 
-// якщо модалок багато
-if (popupLinks.length > 0) {
-  for (let index = 0; index < popupLinks.length; index++) {
-    const popupLink = popupLinks[index];
+openPopups.forEach((button) => {
+  button.addEventListener('click', function () {
+    const popupId = this.getAttribute('data-popup')
 
-    popupLink.addEventListener('click', function (e) {
-      const popupName = popupLink.getAttribute('href').replace('#', '');
-      const currentPopup = document.getElementById(popupName);
-      popupOpen(currentPopup);
-      e.preventDefault();
-    });
-  }
-}
+    popups.forEach((popup) => {
+      if (popup.id === popupId) {
+        popup.classList.add('open')
+      } else {
+        popup.classList.remove('open')
+      }
+      lockBodyScroll('lock')
+    })
+  })
+})
 
-function popupOpen(currentPopup) {
-  lockBody('lock');
-  currentPopup.classList.add('open');
-
-  currentPopup.addEventListener('click', function (e) {
-    if (e.target.closest('.popup__overlay')) {
-      popupClose(e.target.closest('.popup'));
-    }
-  });
-}
-
-function popupClose(activePopup) {
-  lockBody('unlock');
-  activePopup.classList.remove('open');
-}
-
-if (popupCloseIcon.length > 0) {
-  for (let index = 0; index < popupCloseIcon.length; index++) {
-    const el = popupCloseIcon[index];
-    el.addEventListener('click', function (e) {
-      popupClose(el.closest('.popup'));
-      e.preventDefault();
-    });
-  }
-}
-
-document.addEventListener('keydown', function (e) {
-  if (e.which === 27) {
-    const activePopup = document.querySelector('.popup.open');
-    popupClose(activePopup);
-  }
-});
-
-// function need for 1)mobile menu 2) popup
-function lockBody(action) {
-  const body = document.querySelector('body');
-
-  if (action == 'lock') {
-    body.classList.toggle('lock');
-  } else if (action == 'unlock') {
-    body.classList.remove('lock');
-  }
-}
+closePopups.forEach((button) => {
+  button.addEventListener('click', function () {
+    const popup = this.closest('.popup')
+    popup.classList.remove('open')
+    lockBodyScroll('unlock')
+  })
+})
