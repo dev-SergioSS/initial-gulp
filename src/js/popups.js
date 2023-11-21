@@ -17,6 +17,7 @@ openPopups.forEach((button) => {
         popup.classList.remove('open')
       }
       lockBodyScroll('lock')
+      console.log(1)
     })
   })
 })
@@ -26,5 +27,6 @@ closePopups.forEach((button) => {
     const popup = this.closest('.popup')
     popup.classList.remove('open')
     lockBodyScroll('unlock')
+    console.log('close')
   })
 })
