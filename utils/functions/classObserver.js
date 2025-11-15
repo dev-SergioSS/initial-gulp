@@ -4,7 +4,7 @@ const observer = new MutationObserver((mutations) => {
   mutations.forEach((mutation) => {
     if (mutation.attributeName === 'class') {
       if (!ELEMENT.classList.contains('CLASS_NAME')) {
-        addColorDiscount()
+        // do something when CLASS_NAME is removed
       }
     }
   })

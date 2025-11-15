@@ -2,8 +2,8 @@ function resizeWindow() {
   let widthWindow = document.body.clientWidth
 
   if (widthWindow > 998) {
-    block.append(el)
+    // do something for large screens
   } else {
-    block.prepend(el)
+    // do something for small screens
   }
 }

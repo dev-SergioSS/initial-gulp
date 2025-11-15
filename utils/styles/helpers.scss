@@ -1,0 +1,22 @@
+// фон з обох боків контейнера на всю ширину екрану
+
+.layer::before,
+.layer::after {
+	content: '';
+	position: absolute;
+	height: calc(100%);
+	width: calc((100vw - 100%) / 2 + 1px);
+	background-color: #EFF1F3;
+	top: 0px;
+}
+
+.layer::before {
+	transform: translateX(-100%);
+	left: 0;
+}
+
+.layer::after {
+	transform: translateX(100%);
+	left: auto;
+	right: 0;
+}

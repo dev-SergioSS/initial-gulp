@@ -8,7 +8,7 @@ const zipFolder = './zip'
 export const path = {
   src: {
     files: `${srcFolder}/libs/**/*.*`,
-    html: `${srcFolder}/*.html`,
+    html: `${srcFolder}/pages/*.html`,
     scss: `${srcFolder}/scss/*.scss`,
     js: `${srcFolder}/js/*.js`,
     images: `${srcFolder}/img/**/*.{jpg,jpeg,png,gif,webp}`,

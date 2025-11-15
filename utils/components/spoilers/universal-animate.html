@@ -1,0 +1,132 @@
+.spoiler {
+// cs =>
+background-color: #fff;
+
+&.open {
+& .spoiler__head::after {
+transform: rotate(-180deg);
+}
+
+& .spoiler__body {
+opacity: 1;
+transition: height 0.3s ease, opacity .4s ease 0.1s;
+}
+}
+
+&__head {
+position: relative;
+cursor: pointer;
+// cs =>
+padding: 10px 20px;
+padding-right: 68px;
+
+&::after {
+content: '';
+position: absolute;
+transition: all 0.3s ease 0s;
+// cs =>
+width: 28px;
+height: 28px;
+top: 6px;
+right: 20px;
+background: url('@icons/chevron-down.svg') center / contain no-repeat;
+}
+
+// cs => another content
+}
+
+&__body {
+overflow: hidden;
+height: 0;
+opacity: 0;
+transition: height 0.3s ease, opacity .4s ease 0s;
+}
+
+
+&__content {
+// cs =>
+padding: 6px 20px 10px;
+}
+}
+
+<!-- <html>-->
+
+<div class="spoilers">
+
+	<div class="spoiler">
+		<button class="spoiler__head">
+			title
+		</button>
+		<div class="spoiler__body">
+			<div class="spoiler__content">
+				content
+			</div>
+		</div class="spoiler__body">
+	</div>
+
+</div>
+
+<!-- js -->
+
+const spoilerLists = document.querySelectorAll('.spoilers')
+
+if (spoilerLists) {
+spoilerLists.forEach((list) => {
+const spoilers = list.querySelectorAll('.spoiler')
+const firstSpoiler = spoilers[0]
+const firstSpoilerBody = firstSpoiler.querySelector('.spoiler__body')
+const firstSpoilerBodyHeight = firstSpoilerBody.scrollHeight + 'px'
+
+spoilers.forEach((spoiler) => {
+const head = spoiler.querySelector('.spoiler__head')
+const body = spoiler.querySelector('.spoiler__body')
+
+head.addEventListener('click', () => {
+// close other spoilers
+list.querySelectorAll('.spoiler__body').forEach((el) => {
+if (el !== body) el.style.height = '0px'
+})
+
+// set active spoiler
+if (!body.style.height || body.style.height === '0px') {
+body.style.height = body.scrollHeight + 'px'
+spoiler.classList.add('open')
+} else {
+body.style.height = '0px'
+spoiler.classList.remove('open')
+}
+})
+})
+
+// set active first spoiler
+firstSpoiler.classList.add('open')
+firstSpoilerBody.style.height = firstSpoilerBodyHeight
+})
+}
+
+<div class="field-wrapper">
+	<input>
+	<input>
+</div>
+
+<div class="field-wrapper field-wrapper_2col">
+	<input>
+	<input>
+</div>
+
+<style>
+	.field-wrapper {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.field-wrapper input {
+		width: 100%;
+		flex: 0 0 100%;
+	}
+
+	.field-wrapper_2col input {
+		gap: 12px;
+
+	}
+</style>

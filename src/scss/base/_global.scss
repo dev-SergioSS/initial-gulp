@@ -1,0 +1,29 @@
+body {
+	font-family: $font-main;
+	color: $text-color-dark;
+	background-color: $body-bg;
+	font-size: 16px;
+	line-height: 1.2;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	&.lock {
+		overflow: hidden;
+	}
+}
+
+.page-wrapper {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+.main {
+	flex: 1 1 auto;
+}
+
+.container {
+	max-width: $container-max-width-value;
+	padding: 0 $container-padding-value;
+	margin: 0 auto;
+}

@@ -1,0 +1,83 @@
+.btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+
+	// Висота за замовчуванням 54px
+	height: 54px;
+	padding: 0 1.5rem;
+
+	border: 1px solid transparent;
+	border-radius: $border-radius;
+
+	font-family: $font-main;
+	font-weight: 600;
+	font-size: 1rem; // 16px
+
+	cursor: pointer;
+	text-align: center;
+	transition: all 0.3s ease 0s;
+
+
+	// ---  Accent  ---
+	&--accent {
+		background-color: $color-accent;
+		color: $text-color-light;
+		border-color: $color-accent;
+
+		&:hover,
+		&:focus {
+			opacity: 0.9;
+		}
+	}
+
+	// ---  Outline  ---
+	&--outline {
+		background-color: transparent;
+		border-color: $color-accent;
+		color: $color-accent;
+
+		&:hover,
+		&:focus {
+			background-color: $color-accent;
+			color: $text-color-light;
+		}
+	}
+
+	// ---  Dark Outline  ---
+	&--outline-dark {
+		background-color: transparent;
+		border-color: $text-color-dark;
+		color: $text-color-dark;
+
+		&:hover,
+		&:focus {
+			background-color: $text-color-dark;
+			color: $text-color-light;
+		}
+	}
+
+	// ---  Icon  ---
+	// (Використовує <svg> всередині кнопки)
+	&--icon {
+		gap: 0.5rem; // Відстань між іконкою та текстом
+
+		svg {
+			width: 1.25em; // 20px
+			height: 1.25em;
+			fill: currentColor; // Іконка автоматично прийме колір тексту
+		}
+	}
+
+	// ---  Sizing  ---
+
+	&--lg {
+		height: 62px;
+		padding: 0 2rem;
+	}
+
+	&--sm {
+		height: 48px;
+		padding: 0 1.25rem;
+	}
+}

@@ -1,0 +1,80 @@
+/**
+ * ==========================================================================
+ * *										1. Variables
+ * ==========================================================================
+ */
+
+// --- Colors ---
+$body-bg: #ffffff;
+
+$color-primary: #EFE7D7;
+$color-secondary: #6c757d;
+$color-accent: #710014;
+
+$text-color-dark: #483A3D;
+$text-color-light: #ffffff;
+
+// --- Typography ---
+$font-main: 'Inter', sans-serif;
+$font-headings: 'Inter', sans-serif;
+
+// --- Containers ---
+$container-max-width-value: 1200px;
+$container-padding-value: 15px;
+
+// --- Other styles ---
+$border-radius: 16px;
+
+
+/**
+ * ==========================================================================
+ * *										2. Create CSS variables
+ * ==========================================================================
+ */
+
+:root {
+	// --- Colors ---
+	--body-bg: #{$body-bg};
+	--color-primary: #{$color-primary};
+	--color-secondary: #{$color-secondary};
+	--color-accent: #{$color-accent};
+	--text-color-dark: #{$text-color-dark};
+	--text-color-light: #{$text-color-light};
+
+	// --- Typography ---
+	--font-main: #{$font-main};
+	--font-headings: #{$font-headings};
+
+	// --- Containers ---
+	--container-max-width-value: #{$container-max-width-value};
+	--container-padding-value: #{$container-padding-value};
+
+	// --- Other styles ---
+	--border-radius: #{$border-radius};
+}
+
+
+/**
+ * ==========================================================================
+ * *										3. Sync SCSS vars to CSS vars
+ * ==========================================================================
+ */
+
+// --- Colors ---
+$body-bg: var(--body-bg);
+$color-primary: var(--color-primary);
+$color-secondary: var(--color-secondary);
+$color-accent: var(--color-accent);
+$text-color-dark: var(--text-color-dark);
+$text-color-light: var(--text-color-light);
+
+// --- Typography ---
+$font-main: var(--font-main);
+$font-headings: var(--font-headings);
+
+// --- Containers ---
+$container-max-width-value: var(--container-max-width-value);
+$container-padding-value: var(--container-padding-value);
+
+// --- Other styles ---
+$border-radius: var(--border-radius);

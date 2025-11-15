@@ -32,3 +32,11 @@ function lockBodyScroll(action) {
   if (action == 'lock') body.classList.toggle('lock')
   else if (action == 'unlock') body.classList.remove('lock')
 }
+
+document.addEventListener('scroll', function () {
+  console.log('scroll')
+
+  let header = document.querySelector('header')
+  if (window.scrollY > 250) header.classList.add('fixed-on')
+  else header.classList.remove('fixed-on')
+})
