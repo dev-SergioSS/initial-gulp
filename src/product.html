@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ua">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" href="libs/swiper/swiper-bundle.min.css">
+	<title>Гурман - Продукт</title>
+</head>
+
+
+<body>
+	<div class="wrapper">
+		@@include('components/header/header.html', {})
+
+		<main>
+
+			<section class="hero frame">
+				<div class="hero__bg-img hero__bg-img-3"></div>
+				<div class="container">
+					<div class="hero__wrap">
+						<img src="@icons/logo.svg" class="hero__logo" alt="logo" />
+						<h1 class="hero__title">Продукція з томатів <br>
+							“Гурман”</h1>
+						<div class="hero__text">
+							<p>
+								Ми з великою увагою вибираємо найкращі сорти для вирощування,
+								дбаємо про них та вкладаємо наші навички.
+							</p>
+							<p>
+								Соковиті, насичені смаком і ароматом, наші томати зростають під теплим сонцем. Ми пишаємося тим, що
+								допомагаємо вам насолоджуватися
+								смаком найкращого, що може запропонувати природа.
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="catalog">
+				@@include('components/elements/catalog-menu.html', {})
+				<div class="container">
+					<div class="catalog__wrap">
+						<div class="catalog__list catalog__list_limit">
+							<div class="catalog__item button-popup" data-popup="popup-product">
+								<img src="@img/products/tomatoes.png" alt="tomatoes">
+								<h3>ТОМАТНА ПАСТА</h3>
+								<p>25% | 465 г</p>
+							</div>
+							<div class="catalog__item button-popup" data-popup="popup-product">
+								<img src="@img/products/tomatoes.png" alt="tomatoes">
+								<h3>ТОМАТНА ПАСТА</h3>
+								<p>25% | 465 г</p>
+							</div>
+							<div class="catalog__item button-popup" data-popup="popup-product">
+								<img src="@img/products/tomatoes.png" alt="tomatoes">
+								<h3>ТОМАТНА ПАСТА</h3>
+								<p>25% | 465 г</p>
+							</div>
+							<div class="catalog__item button-popup" data-popup="popup-product">
+								<img src="@img/products/tomatoes.png" alt="tomatoes">
+								<h3>ТОМАТНА ПАСТА</h3>
+								<p>25% | 465 г</p>
+							</div>
+							<div class="catalog__item button-popup" data-popup="popup-product">
+								<img src="@img/products/tomatoes.png" alt="tomatoes">
+								<h3>ТОМАТНА ПАСТА</h3>
+								<p>25% | 465 г</p>
+							</div>
+							<div class="catalog__item button-popup" data-popup="popup-product">
+								<img src="@img/products/tomatoes.png" alt="tomatoes">
+								<h3>ТОМАТНА ПАСТА</h3>
+								<p>25% | 465 г</p>
+							</div>
+							<div class="catalog__item button-popup" data-popup="popup-product">
+								<img src="@img/products/tomatoes.png" alt="tomatoes">
+								<h3>ТОМАТНА ПАСТА</h3>
+								<p>25% | 465 г</p>
+							</div>
+							<div class="catalog__item button-popup" data-popup="popup-product">
+								<img src="@img/products/tomatoes.png" alt="tomatoes">
+								<h3>ТОМАТНА ПАСТА</h3>
+								<p>25% | 465 г</p>
+							</div>
+							<div class="catalog__item button-popup" data-popup="popup-product">
+								<img src="@img/products/tomatoes.png" alt="tomatoes">
+								<h3>ТОМАТНА ПАСТА</h3>
+								<p>25% | 465 г</p>
+							</div>
+						</div>
+					</div>
+					<button class="catalog__button button button__gray">ПОКАЗАТИ БІЛЬШЕ</button>
+				</div>
+			</section>
+
+			@@include('components/sections/stores.html', {})
+			@@include('components/sections/team.html', {})
+
+
+		</main>
+
+		@@include('components/footer/footer.html', {})
+	</div>
+
+	@@include('components/popup/popup-feedback.html', {})
+	@@include('components/popup/popup-product.html', {})
+
+	<script src="js/app.js"></script>
+	<script src="libs/swiper/swiper-bundle.min.js"></script>
+	<script src="js/sliders.js"></script>
+	<script src="js/popups.js"></script>
+	<script>
+		const catalogList = document.querySelector('.catalog__list')
+		const btnMoreCatalog = document.querySelector('.catalog__button')
+		btnMoreCatalog.addEventListener('click', () => {
+			catalogList.classList.remove('catalog__list_limit')
+			btnMoreCatalog.classList.add('hidden')
+		})
+	</script>
+</body>
+
+</html>

@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "gulp",
-		"zip": "gulp deployZip",
+    "zip": "gulp deployZip",
     "reset": "gulp resetDev",
     "build": "gulp deployZip --optimize"
   },

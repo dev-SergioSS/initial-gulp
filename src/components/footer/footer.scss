@@ -1,0 +1,230 @@
+.footer {
+	padding: 14vw 0 5vw;
+
+	@media (max-width: $isMobile) {
+		padding: 18.6vw 0 11.7vw;
+	}
+
+	&__wrap {
+		position: relative;
+
+		@media (max-width: $isMobile) {
+			display: flex;
+			flex-direction: column;
+			text-align: center;
+		}
+	}
+
+	&__title {
+		padding-bottom: 37vw;
+		width: 58vw;
+		margin: 0 auto;
+
+		@media (max-width: $isMobile) {
+			padding-bottom: 80vw;
+			font-size: 0.95rem;
+			margin: 0;
+			width: auto;
+		}
+
+	}
+
+	&__map {
+		position: absolute;
+		top: 17.5vw;
+		right: -14vw;
+		width: 70vw;
+		background: url('@img/footer/map.png') 0 0 / contain no-repeat;
+		height: 43vw;
+
+		@media (max-width: $isMobile) {
+			background: url('@img/footer/map-mobile.png') 0 0 / contain no-repeat;
+			width: calc(100% + 7vw);
+			right: -7vw;
+			height: 82vw;
+			top: 27vw;
+		}
+	}
+
+	&__vegetable {
+		position: absolute;
+		top: 18.5vw;
+		left: -4vw;
+		width: 27.5vw;
+		background: url('@img/footer/footer-vegetable.png') 0 0 / contain no-repeat;
+		height: 20.6vw;
+
+		@media (max-width: $isMobile) {
+			top: 80vw;
+			background: url('@img/footer/footer-vegetable__mobile.png') 0 0 / contain no-repeat;
+			left: -7vw;
+			width: 36vw;
+			height: 36vw;
+		}
+	}
+
+	&__logo {
+		position: absolute;
+		top: 42.5vw;
+		left: 29.5vw;
+		width: 11vw;
+
+		@media (max-width: $isMobile) {
+			position: static;
+			width: 24.5vw;
+			align-self: center;
+			margin-bottom: 0.9rem;
+		}
+	}
+
+	&__company {
+		font-weight: 600;
+		text-transform: uppercase;
+		font-size: 1.22em;
+		margin-bottom: 1.11rem;
+
+		@media (max-width: $isMobile) {
+			font-size: 0.95rem;
+			font-weight: 700;
+			order: 1;
+			margin-bottom: 0;
+		}
+	}
+
+	&__contacts {
+		display: flex;
+		flex-direction: column;
+		gap: 1.8rem;
+		margin-bottom: 3vw;
+
+
+		@media (max-width: $isMobile) {
+			gap: 1.06rem;
+			align-items: center;
+			text-align: center;
+			margin-bottom: 8.5vw;
+		}
+	}
+
+	&__contacts-item {
+		position: relative;
+
+		@media (max-width: $isMobile) {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 0.3rem;
+		}
+
+		&::before {
+			content: '';
+			position: absolute;
+			left: -4vw;
+			top: 0.2vw;
+			width: 4vw;
+			height: 4vw;
+
+			@media (max-width: $isMobile) {
+				position: static;
+				background-size: contain;
+				background-position: center 0;
+				width: 1.6rem;
+
+
+			}
+		}
+
+		&_location {
+			max-width: 25vw;
+
+			@media (max-width: $isMobile) {
+				max-width: 72vw;
+				font-size: 0.7rem;
+				font-weight: 700;
+			}
+
+			&::before {
+				background: url('@icons/pin.svg') 0 0 / 1.7rem no-repeat;
+
+				@media (max-width: $isMobile) {
+					height: 2rem;
+				}
+			}
+		}
+
+		&_tel {
+			display: flex;
+			flex-direction: column;
+			font-weight: 300;
+
+			@media (max-width: $isMobile) {
+				font-weight: 600;
+				font-size: 0.66rem;
+				color: rgba(0, 0, 0, 0.60);
+				gap: 3.5vw;
+				text-transform: uppercase;
+				max-width: 70vw;
+
+
+			}
+
+
+
+			&::before {
+				background: url('@icons/call.svg') 0 0 / 1.9rem no-repeat;
+
+				@media (max-width: $isMobile) {
+					height: 1.6rem;
+					top: 2vw;
+					position: relative;
+					left: auto;
+				}
+			}
+
+			& b {
+				font-weight: 400;
+				padding-right: 0.5rem;
+
+				@media (max-width: $isMobile) {
+					display: block;
+					font-weight: 700;
+					font-size: 1.11rem;
+					color: #000;
+				}
+			}
+
+			& span {}
+
+		}
+
+		&_email {
+			@media (max-width: $isMobile) {
+				font-weight: 700;
+				font-size: 0.72rem;
+			}
+
+			&::before {
+				background: url('@icons/mail.svg') 0 0 / 1.9rem no-repeat;
+
+				@media (max-width: $isMobile) {
+					height: 1.12rem;
+				}
+
+			}
+		}
+	}
+
+	&__copyright {
+		text-align: right;
+		padding-right: 2rem;
+		font-size: 0.8rem;
+		text-transform: uppercase;
+
+		@media (max-width: $isMobile) {
+			order: 2;
+			text-align: center;
+			font-size: 0.5rem;
+			padding-right: 0;
+		}
+	}
+}

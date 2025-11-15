@@ -1,24 +1,45 @@
 <header class="header">
-	<div class="container">
-		<div class="header__row">
+	<div class="header__top-info">
+		<div class="header__top-info-wrap">
+			<span class="flag-icon">Компанія ПівденьАгроПереробка є частиною українського бізнесу. 💙💛 Бренд Гурман підтримує
+				ЗСУ та працює
+				заради перемоги.</span>
 
-			<a href="index.html" class="header__logo">
-				<img src="@icons/logo.svg" alt="logo" />
-			</a>
+			<span>Бренд Гурман підтримує ЗСУ та <b> працює заради перемоги. </b></span>
+			<span class="flag-icon">Компанія ПівденьАгроПереробка є частиною українського бізнесу. 💙💛 Бренд Гурман підтримує
+				ЗСУ та працює
+				заради перемоги.</span>
+			<span>Бренд Гурман підтримує ЗСУ та <b> працює заради перемоги. </b></span>
+		</div>
+	</div>
 
-			<nav class="menu">
-				<ul class="menu__list">
-					<li class="menu__list-item"> <a href="#products" class="menu__link">link1</a> </li>
+	<div class="header__row">
+		<nav class="menu">
+			<ul class="menu__list">
+				<li class="menu__list-item menu__list-item_lang"> <button class="menu__link menu__link-lang">ENG</button>
+				</li>
+				<li class="menu__list-item"> <a href="index.html" class="menu__link">Головна</a> </li>
+				<li class="menu__list-item"> <a href="##" class="menu__link">Компанія</a> </li>
 
-				</ul>
+				<li class="header__item-logo">
+					<a href="index.html" class="header__logo">
+						<img src="@icons/logo.svg" alt="logo" />
+					</a>
+				</li>
 
-			</nav>
+				<li class="menu__list-item"> <a href="##" class="menu__link">Співпраця</a> </li>
+				<li class="menu__list-item"> <a href="##" class="menu__link">Асортимент</a> </li>
+				<li class="menu__list-item menu__list-item_chat"> <button data-popup="popup-feedback"
+						class="menu__link-chat button-popup"></button> </li>
+			</ul>
 
-			<div class="header__btn-menu">
-				<span></span>
-				<span></span>
-				<span></span>
-			</div>
+			@@include('../elements/catalog-menu.html', {})
+		</nav>
+
+		<div class="header__btn-menu">
+			<span></span>
+			<span></span>
+			<span></span>
 		</div>
 	</div>
 </header>

@@ -18,7 +18,6 @@
 
 		& .popup__content {
 			opacity: 1;
-			transform: perspective(600px) translate(0px, 0%) rotateX(0deg);
 		}
 	}
 
@@ -28,9 +27,12 @@
 		align-items: center;
 		justify-content: center;
 		position: relative;
-		transition: all 0.8s ease 0s;
-		//
+		transition: all 0.3s ease 0s;
 		padding: 30px 10px;
+
+		@media (max-width: $isMobile) {
+			padding: 0;
+		}
 	}
 
 	&__overlay {
@@ -49,25 +51,238 @@
 		position: relative;
 		transition: all 0.8s ease 0s;
 		opacity: 0;
-		transform: perspective(600px) translate(0px, -100%) rotateX(45deg);
-		//
 		background-color: #fff;
-		max-width: 800px;
+		width: 80vw;
 		color: #000;
-		padding: 30px;
+		background-image: url('@img/backgrounds/bg-texture.png');
+		padding: 5vw;
+		border-radius: 1.3rem;
+		box-shadow: 0px 4px 11px 0px rgba(0, 0, 0, 0.25);
+
+		@media (max-width: $isMobile) {
+			padding: 21.3vw 6vw;
+			border-radius: 0;
+			width: 100vw;
+			box-shadow: none;
+			min-height: 100vh;
+		}
 	}
 
 	&__btn-close {
 		position: absolute;
-		right: 0px;
-		top: 0px;
+		right: 3.1vw;
+		top: 3.1vw;
 		aspect-ratio: 1;
 		background: none;
-		//
-		width: 20px;
+		width: 2rem;
+		z-index: 201;
+
+		@media (max-width: $isMobile) {
+			top: 0.72rem;
+			right: 1.11rem;
+			width: 1rem;
+		}
 
 		& img {
 			width: 100%;
 		}
+	}
+
+	& .header__btn-menu span {
+		background-color: #cdcdcd;
+	}
+
+}
+
+.popup-feedback {
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	&__title {
+		font-family: var(--titleFont);
+		font-weight: 700;
+		font-size: 2.4rem;
+		text-align: center;
+
+		@media (max-width: $isMobile) {
+			font-size: 1.8rem;
+		}
+	}
+
+	&__text {
+		font-size: 1.22rem;
+		max-width: 37vw;
+		text-align: center;
+		margin-bottom: 2.6vw;
+		line-height: 134.5%;
+
+		@media (max-width: $isMobile) {
+			font-size: 0.94rem;
+			max-width: none;
+			margin-bottom: 7vw;
+		}
+	}
+
+	&__vegetable {
+		position: absolute;
+		width: auto;
+	}
+
+	&__vegetable-1 {
+		width: 19.7vw;
+		top: 3.1vw;
+		left: 0;
+
+		@media (max-width: $isMobile) {
+			display: none;
+		}
+	}
+
+	&__vegetable-2 {
+		width: 10.5vw;
+		bottom: 0;
+		right: 0;
+
+		@media (max-width: $isMobile) {
+			display: none;
+		}
+	}
+}
+
+.form {
+	display: flex;
+	flex-direction: column;
+	gap: 0.95rem;
+	width: 38vw;
+
+	@media (max-width: $isMobile) {
+		width: 81vw;
+		gap: 1rem;
+	}
+
+	& input,
+	textarea,
+	button {
+		border-radius: 1.28rem;
+		border: 0.11rem solid #FFF;
+		background: rgba(0, 0, 0, 0.39);
+		color: #fff;
+		text-align: center;
+		font-size: 1.05rem;
+		font-family: 'Open Sans';
+		line-height: 94%;
+		width: 100%;
+
+		@media (max-width: $isMobile) {
+			border-radius: 1.05rem;
+
+		}
+	}
+
+	& input {
+		height: 3.7vw;
+
+		@media (max-width: $isMobile) {
+			height: 12.8vw;
+			font-size: 1rem;
+		}
+
+		&::placeholder {
+			color: #D1D1D1;
+		}
+
+		&.error {
+			opacity: 0.39;
+			background: #BF1822;
+		}
+	}
+
+	& button {
+		height: 3.7vw;
+
+		@media (max-width: $isMobile) {
+			height: 13.8vw;
+			background-color: #BF1822;
+			width: calc(100% - 2rem);
+			margin: 0 auto;
+			border-color: #E1B562;
+
+		}
+	}
+
+
+	& textarea {
+		height: 10vw;
+		padding: 1.16rem;
+
+		@media (max-width: $isMobile) {
+			padding: 1.11rem;
+			height: 37.3vw;
+			font-size: 1rem;
+		}
+
+		&::placeholder {
+			color: #D1D1D1;
+		}
+	}
+
+	&__note {
+		color: #BF1822;
+		text-align: center;
+		font-size: 0.83rem;
+		line-height: 93.9%;
+		margin-top: 0.22rem;
+		// display: block;
+		display: none;
+	}
+}
+
+.popup-product {
+	&__content {
+		padding: 3.33vw 7vw 7.8vw;
+
+		@media (max-width: $isMobile) {
+			padding: 14.4vw 7vw 18vw;
+		}
+	}
+
+	&__vegetable {
+		position: absolute;
+		width: auto;
+
+		@media (max-width: $isMobile) {
+			display: none;
+		}
+
+		&-1 {
+			width: 15vw;
+			top: 0;
+			right: 4.2vw;
+		}
+
+		&-2 {
+			width: 11.6vw;
+			top: 7.7vw;
+			right: 0;
+		}
+
+		&-3 {
+			width: 19vw;
+			bottom: 0;
+			right: 0;
+		}
+
+	}
+}
+
+.popup__breadcrumbs {
+	margin-bottom: 8.6vw;
+
+	@media (max-width: $isMobile) {
+		margin-bottom: 2rem;
 	}
 }
