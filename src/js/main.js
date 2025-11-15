@@ -31,7 +31,6 @@ function lockBodyScroll(action) {
   else if (action == 'unlock') body.classList.remove('lock')
 }
 
-<<<<<<< HEAD:src/js/main.js
 document.addEventListener('scroll', function () {
   console.log('scroll')
 
@@ -39,36 +38,3 @@ document.addEventListener('scroll', function () {
   if (window.scrollY > 250) header.classList.add('fixed-on')
   else header.classList.remove('fixed-on')
 })
-=======
-menuLink.forEach(function (link) {
-  var linkText = link.innerText
-  link.setAttribute('data-text', linkText)
-})
-
-// -- form
-
-const formbtn = document.querySelector('.form button')
-const inputs = document.querySelectorAll('.form input[required]')
-
-formbtn.addEventListener('click', (e) => {
-  console.log('kl')
-  validateForm()
-})
-
-inputs.forEach((el) =>
-  el.addEventListener('click', (e) => {
-    e.target.classList.remove('error')
-  })
-)
-
-function validateForm() {
-  console.log(inputs)
-  inputs.forEach(function (input) {
-    if (input.value.trim() === '') {
-      input.classList.add('error')
-    } else {
-      input.classList.remove('error')
-    }
-  })
-}
->>>>>>> c24042e24865b2d4b79c85a303273cc2c9d11635:src/js/app.js
